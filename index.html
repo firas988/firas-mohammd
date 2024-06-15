@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./css/index_css.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project</title>
+</head>
+
+<body>
+  <header>
+    <div id="title">
+      <img id="phonebook" src="Images/phonebook.png">
+      <h1>Alo Book</h1>
+    </div>
+  </header>
+
+
+
+  <main>
+
+
+    <div id="wrapper">
+
+      <div id="SearchBar">
+        <input name="Search" type="text" placeholder="Search" id="Search">
+        <button type="button" onclick=""><img src="./Images/search.png" alt="search" width="12rem"></button>
+      </div>
+      <ul>
+        <li class="frame">
+          <div class="titles"><span>Name</span> <span>Number</span> <span></span></div>
+        </li>
+        <li class="frame">
+          <div class="titles"><span>Mohammmad</span> <span>050432423423</span> <span><button type="button"
+                onClick="showinfo()" id="info"><img src="Images/user_info.png" width="30px"
+                  alt="showinfo"></button></span>
+          </div>
+
+
+          <div class="MoreInfo">
+            <p>Name:<span></span> <br>
+              Number:<span></span> <br>
+              Email:<span></span> <br></p>
+          </div>
+        </li>
+        <li class="frame">
+          <div class="titles"><span>firas</span> <span>05055345323</span> <span><button type="button"
+                onClick="showinfo()" id="info"><img src="Images/user_info.png" width="30px"
+                  alt="showinfo"></button></span>
+          </div>
+
+
+          <div class="MoreInfo">
+            <p>Name:<span></span> <br>
+              Number:<span></span> <br>
+              Email:<span></span> <br></p>
+          </div>
+        </li>
+
+
+      </ul>
+
+
+
+      <div id="add">
+        <button type="button" onclick=""><img src="Images/add.png" alt="add" width="55rem" title="Add content"></button>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <footer>
+    <h2>Firas Najjar</h2>
+    <h2>Mohammad Kadan</h2>
+  </footer>
+
+</body>
+
+</html>
