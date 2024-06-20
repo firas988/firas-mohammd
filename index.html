@@ -23,50 +23,141 @@
 
     <div id="wrapper">
 
-      <div id="SearchBar">
-        <input name="Search" type="text" placeholder="Search" id="Search">
-        <button type="button" onclick=""><img src="./Images/search.png" alt="search" width="12rem"></button>
+      <div id="top_of_ul">
+
+        <div id="add_user"><button onclick=""><img src="./Images/add_icon.png" alt="add" id="add_user"><img
+              src="./Images/user_icon.png" alt="user" width="30px"></button></div>
+
+        <div id="delete_all"><button onclick=""><img src="./Images/remove-all.png" alt="remove-all" title="remove-all"
+              width="40px"></button></div>
+
+        <div id="SearchBar">
+          <input name="Search" type="text" placeholder="Search" id="Search">
+        </div>
+
       </div>
+
+
       <ul>
+
         <li class="frame">
-          <div class="titles"><span>Name</span> <span>Number</span> <span></span></div>
-        </li>
-        <li class="frame">
-          <div class="titles"><span>Mohammmad</span> <span>050432423423</span> <span><button type="button"
-                onClick="showinfo()" id="info"><img src="Images/user_info.png" width="30px"
-                  alt="showinfo"></button></span>
+          <div class="User">
+
+            <div class="user_info">
+              <img src="./Images/mohammd.png" alt="mohammd" class="user_img">
+              <span class="user_name">Mohammmad</span>
+            </div>
+
+            <span class="number">0504324234</span>
+
+            <div class="user_settings">
+              <button onClick="" class="info_settings"><img src="Images/user_info.png" width="30px" alt="showinfo"
+                  title="more info"></button>
+
+              <button onClick="" class="info_settings"><img src="Images/user_edit.png" width="30px" alt="user_edit"
+                  title="user edit"></button>
+
+              <button onclick="open_popup('ask_delete')" class="info_settings"><img src="Images/delet.png" width="30px"
+                  alt="Delete" title="Delete this user"></button>
+            </div>
+
           </div>
 
-
-          <div class="MoreInfo">
-            <p>Name:<span></span> <br>
-              Number:<span></span> <br>
-              Email:<span></span> <br></p>
-          </div>
-        </li>
-        <li class="frame">
-          <div class="titles"><span>firas</span> <span>05055345323</span> <span><button type="button"
-                onClick="showinfo()" id="info"><img src="Images/user_info.png" width="30px"
-                  alt="showinfo"></button></span>
-          </div>
-
-
-          <div class="MoreInfo">
-            <p>Name:<span></span> <br>
-              Number:<span></span> <br>
-              Email:<span></span> <br></p>
-          </div>
         </li>
 
+        <li class="frame">
+          <div class="User">
 
-      </ul>
+            <div class="user_info">
+              <img src="./Images/mohammd.png" alt="mohammd" class="user_img">
+              <span class="user_name">firas</span>
+            </div>
+
+            <span class="number">0525298747</span>
+
+            <div class="user_settings">
+              <button onClick="" class="info_settings"><img src="Images/user_info.png" width="30px" alt="showinfo"
+                  title="more info"></button>
+
+              <button onClick="" class="info_settings"><img src="Images/user_edit.png" width="30px" alt="user_edit"
+                  title="user edit"></button>
+
+              <button onclick="open_popup('ask_delete')" class="info_settings"><img src="Images/delet.png" width="30px"
+                  alt="Delete" title="Delete this user"></button>
+            </div>
+          </div>
+
+        </li>
 
 
+        <li class="frame">
+          <div class="User">
 
-      <div id="add">
-        <button type="button" onclick=""><img src="Images/add.png" alt="add" width="55rem" title="Add content"></button>
-      </div>
+            <div class="user_info">
+              <img src="./Images/mohammd.png" alt="mohammd" class="user_img">
+              <span class="user_name">zkrya</span>
+            </div>
+
+            <span class="number">0526184761</span>
+
+            <div class="user_settings">
+              <button onclick="open_popup('more_user_info')" class="info_settings"><img src="Images/user_info.png"
+                  width="30px" alt="showinfo" title="more info"></button>
+
+              <button onclick="" class="info_settings"><img src="Images/user_edit.png" width="30px" alt="user_edit"
+                  title="user edit"></button>
+
+              <button onclick="open_popup('ask_delete')" class="info_settings"><img src="Images/delet.png" width="30px"
+                  alt="Delete" title="Delete this user"></button>
+            </div>
+          </div>
+        </li>
+
     </div>
+
+    <div id="popup" onclick="close_popup()">
+
+      <div id="ask_delete">
+        <p>Are you sure you want to delete? </p>
+        <label id="checkbox"><input type="checkbox" name="confirm">
+          yes,delete it
+        </label>
+        <div>
+          <button id="cancel" onclick="close_popup()">Cancel</button>
+          <button id="confirm" onclick="">Delete</button>
+        </div>
+      </div>
+
+
+      <div id="more_user_info">
+        <div id="img_name">
+          <img src="./Images/mohammd.png" alt="###">
+          <p>zkrya</p>
+        </div>
+        <div id="phone_email">
+          <div>
+            <p>Phone Number :</p>
+          </div>
+
+          <div>
+            <p>Email :</p>
+          </div>
+
+          <div>
+            <p>Address :</p>
+          </div>
+
+          <div>
+            <p>description :</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="./javascript/popup_js.js"></script>
   </main>
 
 

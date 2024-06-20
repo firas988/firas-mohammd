@@ -6,6 +6,7 @@ General
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -53,15 +54,19 @@ main {
   width: 75%;
   height: auto;
   text-align: center;
-  border-radius: 3em;
-
+  border-radius: 2em;
+  border: black solid 0.5px;
 }
 
+
 /* Search*/
-#SearchBar {
-  text-align: right;
+#top_of_ul {
+  display: flex;
+  justify-content: space-between;
   width: 95%;
+  padding-left: 11%;
   margin-top: 2%;
+  flex-wrap: wrap;
 }
 
 #SearchBar>input {
@@ -71,88 +76,41 @@ main {
   text-align: center;
 }
 
-#SearchBar>button {
-  border-radius: 2em;
-  height: 3em;
-  width: 3em;
-  border-style: none;
-}
-
-#SearchBar>button:hover {
-  cursor: pointer;
-}
-
-#SearchBar>button:active {
-  border-style: solid;
-  border-width: 1px;
-}
 
 /*rows*/
-
-.titles {
+.User {
   justify-content: space-around;
-  text-align: left;
   display: flex;
   width: 100%;
-
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.MoreInfo {
-  text-align: left;
-  margin-left: 10%;
-  color: black;
-  display: none;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.frame {
-
-  color: rgba(0, 0, 0, 0.3);
-  font-size: 1.2em;
-  font-weight: bold;
-  border-bottom: solid;
-}
-
-#info {
-  border: none;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-}
-
-#info:hover {
-  cursor: pointer;
-}
-
-
-
-
-
-
-/*add*/
-
-#add {
-  text-align: right;
-
-}
-
-#add>button {
-  background-color: #4285F4;
-  border: none;
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  margin-right: 1rem;
+  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
+  flex-wrap: wrap;
 }
 
-#add>button:hover {
+/*top of ul*/
+
+#add_user button,
+#delete_all button {
+  background: none;
+  border: none;
+  width: 70px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#delete_all button:hover {
   cursor: pointer;
-  animation: rotation 1s;
+}
+
+#add_user button:hover {
+  cursor: pointer;
+
+  #add_user {
+    animation: rotation 1.5s;
+  }
+
 }
 
 @keyframes rotation {
@@ -164,6 +122,74 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+#add_user {
+  width: 20px;
+}
+
+
+
+/*ul*/
+ul {
+  list-style-type: none;
+}
+
+.frame {
+  color: rgb(0, 0, 0, 0.60);
+  font-size: 1.2em;
+  font-weight: bold;
+  border-top: solid;
+}
+
+/*user*/
+.user_info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user_img {
+  width: 6rem;
+  border-radius: 50%;
+}
+
+.user_name {
+  width: 10rem;
+}
+
+.user_settings,
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*user_settings*/
+.user_settings {
+  gap: 1rem;
+}
+
+.info_settings {
+  background: none;
+  border: none;
+}
+
+.info_settings:hover {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*add*/
+
 
 
 
@@ -179,3 +205,114 @@ footer {
 }
 
 /* #endregion */
+
+
+
+
+
+
+
+#popup {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0, 0.7);
+  display: none;
+  /*/*/
+  /*/*/
+
+}
+
+/*delete ask */
+
+#ask_delete {
+  width: 20rem;
+  height: 10rem;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  display: none;
+}
+
+#ask_delete p {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+#checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  gap: 10px;
+  height: 2rem;
+}
+
+#ask_delete div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+#ask_delete button {
+  height: 2rem;
+  width: 5rem;
+  border: 0.5px black solid;
+  border-radius: 2rem;
+
+}
+
+#confirm:hover {
+  background: red;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+#cancel:hover {
+  background: rgb(11, 222, 11);
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+
+/*more_user_info*/
+
+#more_user_info {
+  width: 60%;
+  height: 80%;
+  background: white;
+  border-radius: 1rem;
+  display: none;
+}
+
+#img_name {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+}
+
+
+#phone_email {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+#phone_email div {
+  margin-bottom: 8px;
+}
+
