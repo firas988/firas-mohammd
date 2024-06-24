@@ -28,7 +28,16 @@ header {
 
 #phonebook {
   width: 7%;
+}
 
+#alobook {
+  flex: 50%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#Book {
+  text-align: right;
+  margin-left: 70%;
 }
 
 #title {
@@ -51,26 +60,35 @@ main {
 
 #wrapper {
   background-color: white;
-  width: 75%;
+  width: 65%;
   height: auto;
   text-align: center;
   border-radius: 2em;
-  border: black solid 0.5px;
+  border: black solid 1.5px;
 }
 
 
 /* Search*/
 #top_of_ul {
   display: flex;
-  justify-content: space-between;
-  width: 95%;
-  padding-left: 11%;
-  margin-top: 2%;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
+#top_of_ul div {
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+#SearchBar {
+  align-items: center;
+  justify-content: center;
+}
+
 #SearchBar>input {
-  height: 3rem;
+  height: 2.5rem;
+  width: 70%;
   border-radius: 1.5em;
   border-color: #D9D9D9;
   text-align: center;
@@ -166,7 +184,7 @@ ul {
 
 /*user_settings*/
 .user_settings {
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .info_settings {
@@ -315,4 +333,3 @@ footer {
 #phone_email div {
   margin-bottom: 8px;
 }
-
