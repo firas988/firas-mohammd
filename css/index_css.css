@@ -1,7 +1,4 @@
-/**
-General
-**/
-
+/*#region general*/
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +16,9 @@ body {
   flex-direction: column;
   height: 100%;
 }
+
+/*#endregion general */
+
 
 /* #region header */
 header {
@@ -47,7 +47,7 @@ header {
   gap: 3%;
 }
 
-/* #endregion */
+/* #endregion header */
 
 
 /* #region numberslist */
@@ -68,7 +68,7 @@ main {
 }
 
 
-/* Search*/
+/*#region Search*/
 #top_of_ul {
   display: flex;
   justify-content: space-around;
@@ -94,8 +94,27 @@ main {
   text-align: center;
 }
 
+/* #endregion search */
 
-/*rows*/
+/*#region list frame*/
+ul {
+  list-style-type: none;
+}
+
+.User:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.frame {
+  color: rgb(0, 0, 0, 0.60);
+  font-size: 1.2em;
+  font-weight: bold;
+  border-top: solid;
+}
+
+/*#endregion list frame*/
+
+/*#region rows*/
 .User {
   justify-content: space-around;
   display: flex;
@@ -105,8 +124,9 @@ main {
   flex-wrap: wrap;
 }
 
-/*top of ul*/
+/*#endregion rows*/
 
+/*#region list options*/
 #add_user button,
 #delete_all button {
   background: none;
@@ -125,7 +145,7 @@ main {
 #add_user button:hover {
   cursor: pointer;
 
-  #add_user {
+  #add_user_img_plus {
     animation: rotation 1.5s;
   }
 
@@ -141,33 +161,35 @@ main {
   }
 }
 
-#add_user {
+#add_user_img_plus {
   width: 20px;
 }
 
-
-
-/*ul*/
-ul {
-  list-style-type: none;
+#add_user_img_face {
+  width: 30px;
 }
 
-.frame {
-  color: rgb(0, 0, 0, 0.60);
-  font-size: 1.2em;
-  font-weight: bold;
-  border-top: solid;
+#delet_all_img {
+  width: 40px;
 }
 
-/*user*/
+/*#endregion list options*/
+
+
+
+
+/*#region user*/
 .user_info {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
 .user_img {
   width: 6rem;
+  height: 6rem;
   border-radius: 50%;
 }
 
@@ -182,7 +204,7 @@ ul {
   justify-content: center;
 }
 
-/*user_settings*/
+/*#region user_settings*/
 .user_settings {
   gap: 2rem;
 }
@@ -196,43 +218,15 @@ ul {
   cursor: pointer;
 }
 
+/*#endregion user_settings*/
 
+/*#endregion user*/
 
-
-
-
-
-
-
-
-
-/*add*/
-
-
-
-
-/* #endregion */
-
-
-/* #region footer */
-
-footer {
-  margin-top: 1%;
-  gap: 1%;
-  text-align: center;
-}
-
-/* #endregion */
-
-
-
-
-
-
+/*#region popup*/
 
 #popup {
   position: fixed;
-  display: flex;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -240,13 +234,13 @@ footer {
   justify-content: center;
   align-items: center;
   background: rgb(0, 0, 0, 0.7);
-  display: none;
+
   /*/*/
   /*/*/
 
 }
 
-/*delete ask */
+/* #region delete ask */
 
 #ask_delete {
   width: 20rem;
@@ -303,33 +297,444 @@ footer {
   transition: background 0.5s;
 }
 
+/*#endregion delete ask*/
 
-/*more_user_info*/
+
+/*#region more_user_info*/
 
 #more_user_info {
-  width: 60%;
-  height: 80%;
+  height: fit-content;
   background: white;
   border-radius: 1rem;
   display: none;
+  padding: 1% 2% 2% 2%;
 }
 
-#img_name {
+/*#region close info button*/
+#close_button {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+#close {
+  background-color: #F34235;
+  width: 20%;
+  height: 30%;
+  margin: 1%;
+  padding: 3% 3% 3% 3%;
+  border-radius: 3em;
+  font-weight: bold;
+  border: transparent;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*#endregion close info button*/
+
+/*#region Contact main info*/
+
+#img_name_number {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   font-size: 2rem;
 }
 
+#contact_img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 
+#contact_phone {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.829);
+}
+
+/*#endregion contact main info */
+
+
+
+
+/*#region Contact side info(email address description)*/
 #phone_email {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-left: 2rem;
+  margin-top: 3rem;
+
 }
 
 #phone_email div {
-  margin-bottom: 8px;
+  flex: 30%;
+}
+
+#phone_email span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/*#endregion Contact side info(email address description)*/
+
+/*#endregion more_user_info*/
+
+
+
+/*#region edit user info*/
+#edit_user_info {
+  width: 35%;
+  padding: 2%;
+  height: max-content;
+  background: white;
+  border-radius: 1rem;
+  display: none;
+}
+
+#image {
+  text-align: center;
+}
+
+#pfp {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+
+
+
+#contact_edit {
+  margin-top: 2rem;
+  font-size: 1.3em;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1em;
+
+}
+
+#contact_edit #cont1 div {
+  height: 1.5rem;
+  border-radius: 5px;
+}
+
+#contact_edit #cont2 div {
+  height: 1.5rem;
+  border-radius: 5px;
+}
+
+#contact_edit div {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+#contact_edit label {
+  text-align: center;
+}
+
+#cont1 {
+  gap: 1em;
+}
+
+#cont2 {
+  gap: 1em;
+}
+
+#contact_edit div button {
+  text-align: center;
+}
+
+#contact_edit div * {
+  flex: 50%;
+}
+
+/*#region Description edit*/
+#desc {
+  display: block;
+  margin-top: 10%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+
+}
+
+#desc textarea {
+  width: 80%;
+}
+
+/*#endregion Description edit*/
+
+/*#region cancel or save*/
+#edit_options {
+  display: flex;
+  gap: 10%;
+  justify-content: space-around;
+  vertical-align: bottom;
+  margin-top: 10%;
+  padding-bottom: 3%;
+
+}
+
+#edit_options button {
+  flex: 50%;
+  height: 55px;
+  border-radius: 3rem;
+  border: solid 1px;
+  font-weight: bold;
+  font-size: medium;
+
+}
+
+#save_edit {
+  transition: background 0.3s;
+
+}
+
+#save_edit:hover {
+  background: rgb(11, 222, 11);
+  transition: background 0.3s;
+}
+
+#cancel_edit {
+  transition: background 0.3s;
+
+}
+
+#cancel_edit:hover {
+  background: red;
+  transition: background 0.3s;
+}
+
+/*#endregion cancel or save*/
+
+/*#endregion edit user info*/
+
+
+
+
+/*#region add user*/
+
+#Add_user {
+  background-color: white;
+  width: 600px;
+  height: 550px;
+  border-radius: 1rem;
+  display: none;
+}
+
+#add_user_img {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add_user_img img {
+  width: 150px;
+  height: 150px;
+}
+
+.add_user_div_div {
+  display: flex;
+  gap: 8rem;
+}
+
+#Add_user label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2rem;
+}
+
+input {
+  height: 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#add_user_img div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add_user_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#description {
+  width: 20rem;
+  height: 5rem;
+}
+
+#add_button {
+  display: flex;
+  gap: 300px;
+}
+
+#add_button button {
+  height: 2rem;
+  width: 5rem;
+  border: 0.5px black solid;
+  border-radius: 2rem;
+}
+
+#cancel_add {
+  transition: background 0.3s;
+}
+
+#cancel_add:hover {
+  background: red;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+#save_add {
+  transition: background 0.3s;
+}
+
+#save_add:hover {
+  background: rgb(11, 222, 11);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+
+
+/*#endregion*/
+
+
+/*#endregion*/
+
+
+.show {
+  display: block !important;
+}
+
+
+
+
+
+/* #endregion numberlist */
+
+
+/* #region footer */
+
+footer {
+  margin-top: 1%;
+  gap: 1%;
+  text-align: center;
+}
+
+/* #endregion */
+
+
+@media only screen and (max-width: 600px) {
+  #phonebook {
+    width: 30%;
+  }
+
+  #title {
+    font-size: 1em;
+  }
+
+  #Book {
+    margin-left: 50%;
+  }
+
+  #Search {
+    min-width: 10rem;
+    margin-bottom: 1rem;
+  }
+
+  /*#region add user*/
+  #Add_user {
+    width: 80%;
+    height: fit-content;
+    padding: 1%;
+  }
+
+  #Add_user label {
+    margin: 0;
+  }
+
+  #add_user_div {
+    gap: 1em;
+
+  }
+
+  .add_user_div_div {
+    justify-content: center;
+    flex-wrap: wrap;
+    height: fit-content;
+
+    gap: 1em
+  }
+
+
+  #description {
+    width: auto;
+  }
+
+  #add_button * {
+    flex: 50%;
+  }
+
+  #add_button {
+    gap: 110px;
+  }
+
+  /*#endregion add user*/
+
+  /*#region more_user_info*/
+  #more_user_info {
+    width: 80% !important;
+    height: fit-content;
+    font-size: 0.7em;
+    padding: 2% 2% 2% 2%;
+
+  }
+
+  #close {
+    width: fit-content;
+  }
+
+  #phone_email {
+    margin: 0;
+  }
+
+  /*#endregion more_user_info*/
+
+
+  /*region edit_user_info*/
+  #edit_user_info {
+    width: 80% !important;
+    height: fit-content;
+    padding: 1%;
+  }
+
+  #contact_edit {
+    margin: 0;
+  }
+
+  #desc {
+    margin: 0;
+  }
+
+  #edit_options {
+    margin: 0;
+  }
+
+  /*#endregion edit_user_info*/
+
 }

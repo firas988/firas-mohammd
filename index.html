@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="./css/index_css.css">
+  <link rel="stylesheet" href="css/index_css.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>project</title>
 </head>
 
-<body>
+<body onload="showUsers()">
   <header>
     <div id="title">
-      <img id="phonebook" src="Images/phonebook.png">
+      <img id="phonebook" src="Images/phonebook.png" alt="phonebook">
       <h1>
-        <div id="alobook"><span id="Alo">Alo</span>
+        <span id="alobook"><span id="Alo">Alo</span>
           <br>
           <span id="Book">Book</span>
-        </div>
+        </span>
       </h1>
     </div>
   </header>
@@ -27,14 +27,17 @@
 
 
     <div id="wrapper">
+      <div id="counter_users">
 
+      </div>
       <div id="top_of_ul">
 
-        <div id="add_user"><button onclick=""><img src="./Images/add_icon.png" alt="add" id="add_user"><img
-              src="./Images/user_icon.png" alt="user" width="30px"></button></div>
+        <div id="add_user"><button onclick="open_popup('Add_user')"><img src="./Images/add_icon.png"
+              id="add_user_img_plus" alt="add"><img src="./Images/user_icon.png" alt="user"
+              id="add_user_img_face"></button></div>
 
-        <div id="delete_all"><button onclick=""><img src="./Images/remove-all.png" alt="remove-all" title="remove-all"
-              width="40px"></button></div>
+        <div id="delete_all"><button onclick="change_value('all');open_popup('ask_delete')"><img
+              src="./Images/remove-all.png" alt="remove-all" title="remove-all" id="delet_all_img"></button></div>
 
         <div id="SearchBar">
           <input name="Search" type="text" placeholder="Search" id="Search">
@@ -43,84 +46,12 @@
       </div>
 
 
-      <ul>
-
-        <li class="frame">
-          <div class="User">
-
-            <div class="user_info">
-              <img src="./Images/mohammd.png" alt="mohammd" class="user_img">
-              <span class="user_name">Mohammmad</span>
-            </div>
-
-            <span class="number">0504324234</span>
-
-            <div class="user_settings">
-              <button onClick="" class="info_settings"><img src="Images/user_info.png" width="40em" alt="showinfo"
-                  title="more info"></button>
-
-              <button onClick="" class="info_settings"><img src="Images/user_edit.png" width="40em" alt="user_edit"
-                  title="user edit"></button>
-
-              <button onclick="open_popup('ask_delete')" class="info_settings"><img src="Images/delet.png" width="40em"
-                  alt="Delete" title="Delete this user"></button>
-            </div>
-
-          </div>
-
-        </li>
-
-        <li class="frame">
-          <div class="User">
-
-            <div class="user_info">
-              <img src="./Images/mohammd.png" alt="mohammd" class="user_img">
-              <span class="user_name">firas</span>
-            </div>
-
-            <span class="number">0525298747</span>
-
-            <div class="user_settings">
-              <button onClick="" class="info_settings"><img src="Images/user_info.png" width="40em" alt="showinfo"
-                  title="more info"></button>
-
-              <button onClick="" class="info_settings"><img src="Images/user_edit.png" width="40em" alt="user_edit"
-                  title="user edit"></button>
-
-              <button onclick="open_popup('ask_delete')" class="info_settings"><img src="Images/delet.png" width="40em"
-                  alt="Delete" title="Delete this user"></button>
-            </div>
-          </div>
-
-        </li>
-
-
-        <li class="frame">
-          <div class="User">
-
-            <div class="user_info">
-              <img src="./Images/mohammd.png" alt="mohammd" class="user_img">
-              <span class="user_name">zkrya</span>
-            </div>
-
-            <span class="number">0526184761</span>
-
-            <div class="user_settings">
-              <button onclick="open_popup('more_user_info')" class="info_settings"><img src="Images/user_info.png"
-                  width="40em" alt="showinfo" title="more info"></button>
-
-              <button onclick="" class="info_settings"><img src="Images/user_edit.png" width="40em" alt="user_edit"
-                  title="user edit"></button>
-
-              <button onclick="open_popup('ask_delete')" class="info_settings"><img src="Images/delet.png" width="40em"
-                  alt="Delete" title="Delete this user"></button>
-            </div>
-          </div>
-        </li>
+      <ul id="users">
+      </ul>
 
     </div>
 
-    <div id="popup" onclick="close_popup()">
+    <div id="popup" onclick="close_popup(event)">
 
       <div id="ask_delete">
         <p>Are you sure you want to delete? </p>
@@ -128,41 +59,126 @@
           yes,delete it
         </label>
         <div>
-          <button id="cancel" onclick="close_popup()">Cancel</button>
-          <button id="confirm" onclick="">Delete</button>
+          <button id="cancel" onclick="close_popup('close')">Cancel</button>
+          <button id="confirm" onclick="delet_user()" value="">Delete</button>
         </div>
       </div>
+
+
+
 
 
       <div id="more_user_info">
-        <div id="img_name">
-          <img src="./Images/mohammd.png" alt="###">
-          <p>zkrya</p>
+        <div id="close_button">
+          <button onclick="close_popup('close')" id="close">CLOSE</button>
+        </div>
+        <div id="img_name_number">
+          <img src="#" alt="contact_pic" id="contact_img">
+          <p id="contact_name">zkrya</p>
+          <p id="contact_phone">0525164474</p>
         </div>
         <div id="phone_email">
-          <div>
-            <p>Phone Number :</p>
-          </div>
-
-          <div>
-            <p>Email :</p>
-          </div>
-
-          <div>
-            <p>Address :</p>
-          </div>
-
-          <div>
-            <p>description :</p>
-          </div>
-
         </div>
 
       </div>
 
-    </div>
 
-    <script src="./javascript/popup_js.js"></script>
+
+
+      <div id="edit_user_info">
+        <div id="image">
+          <img src="./Images/mohammd.png" id="pfp" alt="user_picture">
+        </div>
+
+        <form id="contact_edit">
+          <div id="cont1">
+
+            <div>
+              <label for="name">Name</label>
+              <input id="edit_name" name="name" type="text" value="" placeholder="Address">
+            </div>
+
+            <div>
+              <label for="number">Number</label>
+              <input id="edit_phone_num" type="text" name="number" value="" placeholder="Number">
+            </div>
+
+          </div>
+
+          <div id="cont2">
+
+            <div>
+              <label for="edit_email">Email</label>
+              <input id="edit_email" type="email" value="" name="mail" placeholder="Email">
+            </div>
+
+            <div>
+              <label for="edit_address">Address</label>
+              <input id="edit_address" type="text" value="" name="Address" placeholder="Address">
+            </div>
+
+          </div>
+
+        </form>
+
+        <div id="desc">
+          <span>Description</span>
+          <br> <textarea id="edit_description"></textarea>
+        </div>
+
+        <div id="edit_options">
+          <button type="submit" onclick="close_popup('close')" id="cancel_edit" value="">Cancel</button>
+          <button type="submit" onclick="save_edit()" id="save_edit" value=" ">Save</button>
+        </div>
+
+      </div>
+
+
+      <div id="Add_user">
+
+        <div id="add_user_img">
+          <img src="https://picsum.photos/200/300?random=100" class="user_img" alt="user img">
+        </div>
+
+        <div id="add_user_div">
+
+          <div class="add_user_div_div">
+
+            <label for="name"> Name
+              <input type="text" placeholder="Enter the Name" id="name">
+            </label>
+
+            <label for="number">Number
+              <input type="number" placeholder="Enter thr Number" id="number">
+            </label>
+
+          </div>
+
+          <div class="add_user_div_div">
+
+            <label for="email">Email
+              <input type="email" placeholder="Ente the Email" id="email">
+            </label>
+
+            <label for="address">Address
+              <input type="text" placeholder="Enter thr Address" id="address">
+            </label>
+
+          </div>
+
+          <label for="description">Description
+            <textarea name="description" id="description"></textarea>
+          </label>
+
+          <div id="add_button">
+            <button onclick="close_popup('close')" id="cancel_add">Cancel</button>
+            <button onclick="add_user()" id="save_add">Add</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="javascript/index_js.js"></script>
   </main>
 
 
