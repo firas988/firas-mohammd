@@ -308,6 +308,7 @@ ul {
   border-radius: 1rem;
   display: none;
   padding: 1% 2% 2% 2%;
+  width: 50%;
 }
 
 /*#region close info button*/
@@ -524,9 +525,10 @@ ul {
 #Add_user {
   background-color: white;
   width: 600px;
-  height: 550px;
+  height: fit-content;
   border-radius: 1rem;
   display: none;
+  padding-bottom: 2%;
 }
 
 #add_user_img {
@@ -550,7 +552,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
   margin-bottom: 2rem;
 }
 
@@ -619,6 +621,20 @@ input {
 
 .show {
   display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.redborder {
+  border: 2px solid red;
+}
+
+.error_msg {
+  color: red;
+  font-size: 10px;
+  text-align: center;
 }
 
 
