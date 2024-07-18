@@ -36,7 +36,9 @@ let users = [
   },
 
 ];
-
+/**
+  DISPLAYS USER INFORMATION LI ELEMENTS ON PAGE
+ */
 function showUsers() {
   let user = "";
   users.sort((a, b) => a.name.localeCompare(b.name));
@@ -71,14 +73,24 @@ function showUsers() {
 
 }
 
-function updatecount(value) {
+
+/**
+ * Changes value of button to index of contact to allow access to specific contact
+ * @param  {index} index of clicked contact 
+ */
+function updatecount(index) {
   //UPDATES CONTACT COUNTER
   document.getElementById("counter_users").innerHTML = `<h2>${value} Contacts</h2>`;
 }
 
 
-
-function has(name, text) {
+/**
+ * Checks if contact name contains the search input
+ * @param  {name} name name of contact
+ * @param  {searchinput} searchinput input in searchbar
+ * @return {boolean} true if name of contact contains what   
+ */
+function has(name, searchinput) {
   if (text.length > name.length)
     return false;
   else
@@ -88,7 +100,17 @@ function has(name, text) {
 
   return true;
 }
-function search() {
+
+
+
+
+
+/**
+ * Filters contact results depending on search bar input
+ * @param  {event} event input event in searchbar   
+ */
+let search = (event) => {
+
 
 
   let allcontacts = document.getElementsByClassName("frame");
@@ -96,7 +118,6 @@ function search() {
   let searchvalue = document.getElementById("Search").value
   let searchtext = document.createElement('span')
   searchtext.textContent = searchvalue;
-
 
   if (event.target === document.getElementById("Search")) {
     users.forEach((e, i) => {
@@ -115,18 +136,35 @@ function search() {
 
   }
 
-  updatecount(document.getElementsByClassName('show').length)
-
+  updatecount(document.getElementsByClassName('show').length);
 
 }
 
 
-function open_popup(x) {
+
+
+
+
+
+
+
+
+/**
+ * Opens pop up window depending on the clicked button (update,delete etc...)
+ * @param  {window_id} window_id ID of popup that the button opens  
+ */
+function open_popup(window_id) {
   document.getElementById("popup").style.display = 'flex';
-  document.getElementById(x).classList.add("show");
+  document.getElementById(window_id).classList.add("show");
 
 }
 
+
+
+/**
+ * Closes popup after pressing  a button made for closing the popup (onclick event)
+ * @param  {event} event click event of button  
+ */
 function close_popup(event) {
   if (event.target == document.getElementById("popup") || event == 'close' || event.keyCode == 27 && document.getElementById("popup").style.display == 'flex') {
     document.getElementById("popup").style.display = 'none';
@@ -157,6 +195,14 @@ function close_popup(event) {
 
 }
 
+
+
+/**
+ * Checks name input validity (if name doesnt exist in list and if name field isn't empty)
+ * @param  {index} index index of contact 
+ * @return {true} if name is valid
+ * @return {false}if name is invalid
+ */
 function name_check(index) {
 
 
@@ -191,6 +237,14 @@ function name_check(index) {
   return true;
 }
 
+
+
+/**
+ * Checks number input validity (if number is made of 10 numbers)
+ * @param  {index} index index of contact 
+ * @return {true} if number is valid
+ * @return {false}if number is invalid
+ */
 function number_check(index) {
   let error = document.createElement("p");
   error.classList.add('error_msg');
@@ -212,6 +266,8 @@ function number_check(index) {
   for (let i = 0; i < stringX.length; i++) {
     if (stringX[i] < '0' || stringX[i] > '9') {
       x.classList.add("redborder");
+      error.innerHTML = `you must have Enter  just a numbers `;
+      error.classList.remove('hide');
       return false;
     }
   }
@@ -231,6 +287,15 @@ function number_check(index) {
 
   return true;
 }
+
+
+
+/**
+ * Checks number input validity (If email isn't in list and has @ inputed then gamil/hotmail/ etc... .com etc..)
+ * @param  {index} index index of contact 
+ * @return {true} if email is valid
+ * @return {false}if email is invalid
+ */
 function email_check(index) {
   let error = document.createElement("p");
   error.classList.add('error_msg');
@@ -238,7 +303,6 @@ function email_check(index) {
 
   let x = document.getElementById("email");
   x.after(error);
-
 
   if (x.value.toString().length == 0) {
     return true;
@@ -262,7 +326,8 @@ function email_check(index) {
   for (let i = 0; i < users.length; i++) {
     if (x.value.toString().trim() == users[i].email.trim() && index != i) {
       x.classList.add("redborder");
-      alert("email already exists in contacts.");
+      error.innerHTML = "email already exists in contacts.";
+      error.classList.remove('hide');
       return false;
     }
   }
@@ -273,6 +338,11 @@ function email_check(index) {
   return true;
 }
 
+
+/**
+* Add contact function
+* 
+ */
 function add_user() {
 
   if (document.querySelector('#Name_label .error_msg') !== null)
@@ -311,8 +381,13 @@ function add_user() {
 
 }
 
+
+/** 
+* Display contact info
+* @param {index} index of contact to display its info
+*/
 function show_user(index) {
-  //DISPLAY USER INFO IN EDIT FORM
+
   document.getElementById("user_img_add").src = users[index].img + index;
   document.getElementById("name").value = users[index].name;
   document.getElementById("number").value = users[index].number;
@@ -321,6 +396,11 @@ function show_user(index) {
   document.getElementById("description").value = users[index].description;
 }
 
+
+/** 
+* Display contact info in edit form
+* @param {index} index of contact to display its info in the edit form
+*/
 function display_user(index) {
   //DISPLAY USER INFO IN MORE INFO POPUP
   document.getElementById("contact_img").src = users[index].img + index;
@@ -343,6 +423,9 @@ function display_user(index) {
 
 }
 
+/** 
+* Saves contact edit calls close pop up function and restarts all error messages
+*/
 function save_edit() {
   //SAVES EDIT
 
@@ -383,6 +466,10 @@ function save_edit() {
 
 }
 
+/** 
+* Change inner html and value of button to index of contact list  who we want to edit or delete
+*
+*/
 function change_value(index) {
   //GETS VALUE OF INDEX OF CONTACT TO EDIT/DELETE
   document.getElementById("confirm").value = index;
@@ -393,6 +480,10 @@ function change_value(index) {
 
 }
 
+/**
+ * delete user or all users depending on button clicked
+ * 
+ */
 function delet_user() {
   //DELETE USER/ALL USERS
   let conf = document.querySelector("#checkbox input");
@@ -419,4 +510,8 @@ function delet_user() {
     alert("You have to select the checkbox to confirm delete.")
   }
 
+}
+
+function stopref(e) {
+  event.preventDefault();
 }

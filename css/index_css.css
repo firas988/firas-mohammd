@@ -61,10 +61,11 @@ main {
 #wrapper {
   background-color: white;
   width: 65%;
-  height: auto;
+  height: fit-content;
   text-align: center;
   border-radius: 2em;
   border: black solid 1.5px;
+  padding: 2%
 }
 
 
@@ -92,6 +93,13 @@ main {
   border-radius: 1.5em;
   border-color: #D9D9D9;
   text-align: center;
+}
+
+#counter_users h2 {
+  font-size: 1em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.249);
+
 }
 
 /* #endregion search */
@@ -122,6 +130,10 @@ ul {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   flex-wrap: wrap;
+}
+
+.User>* {
+  flex: 33%
 }
 
 /*#endregion rows*/
@@ -222,6 +234,187 @@ ul {
 
 /*#endregion user*/
 
+/*surprise*/
+
+.dot {
+  font-size: 3em;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 3em;
+  height: 20px;
+  width: 20px;
+  display: block;
+
+}
+
+#alldot {
+  display: flex;
+  gap: 2em;
+  width: fit-content;
+  margin: auto;
+
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+#alldot_in {
+  display: flex;
+  gap: 2em;
+  width: fit-content;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.dot1 {
+  display: block;
+  width: 50px;
+}
+
+#alldot_in :nth-child(1) {
+  animation: resize 1s infinite;
+}
+
+
+@keyframes resize {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+
+  25% {
+    width: 30px;
+    height: 30px;
+    background: rgb(19, 155, 209);
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+
+  75% {
+    width: 20px;
+    height: 20px;
+  }
+
+  100% {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+#alldot_in :nth-child(2) {
+  animation: resize2 1s infinite;
+}
+
+@keyframes resize2 {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+
+  25% {
+    width: 20px;
+    height: 20px;
+  }
+
+  50% {
+    width: 30px;
+    height: 30px;
+    background: rgb(19, 155, 209);
+  }
+
+  75% {
+    width: 20px;
+    height: 20px;
+  }
+
+  100% {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+#alldot_in :nth-child(3) {
+  animation: resize3 1s infinite;
+}
+
+@keyframes resize3 {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+
+  25% {
+    width: 20px;
+    height: 20px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+
+  75% {
+    width: 30px;
+    height: 30px;
+    background: rgb(19, 155, 209);
+  }
+
+  100% {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+#surprise {
+  width: 80px;
+  height: 40px;
+  border-radius: 2rem;
+  border: none;
+  background-color: white;
+
+}
+
+
+
+#surprise:hover {
+  cursor: pointer;
+  animation: changecolor 3s infinite;
+}
+
+@keyframes changecolor {
+  0% {
+    background-color: rgb(17, 209, 56);
+  }
+
+  20% {
+    background-color: rgb(190, 15, 15);
+  }
+
+  40% {
+    background-color: rgb(25, 36, 190);
+  }
+
+  60% {
+    background-color: rgb(197, 20, 64);
+  }
+
+  80% {
+    background-color: rgb(162, 16, 173);
+  }
+
+  100% {
+    background-color: rgb(15, 193, 128);
+  }
+}
+
 /*#region popup*/
 
 #popup {
@@ -320,10 +513,9 @@ ul {
 
 #close {
   background-color: #F34235;
-  width: 20%;
-  height: 30%;
-  margin: 1%;
-  padding: 3% 3% 3% 3%;
+
+  margin: 0.5%;
+  padding: 2% 3% 2% 3%;
   border-radius: 3em;
   font-weight: bold;
   border: transparent;
@@ -723,6 +915,10 @@ footer {
 
   #close {
     width: fit-content;
+  }
+
+  #close_button {
+    padding: 3%;
   }
 
   #phone_email {

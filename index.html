@@ -41,7 +41,7 @@
               src="./Images/remove-all.png" alt="remove-all" title="remove-all" id="delet_all_img"></button></div>
 
         <div id="SearchBar">
-          <input oninput="search()" name="Search" type="text" placeholder="Search" id="Search">
+          <input oninput="search(event)" name="Search" type="text" placeholder="Search" id="Search">
         </div>
 
       </div>
@@ -105,44 +105,52 @@
         </div>
 
         <div id="add_user_div">
+          <form action="#" onsubmit="stopref()">
+            <div class="add_user_div_div">
 
-          <div class="add_user_div_div">
+              <label id="Name_label" for="name"> Name
+                <input type="text" placeholder="Enter the Name" id="name">
 
-            <label id="Name_label" for="name"> Name
-              <input type="text" placeholder="Enter the Name" id="name">
+              </label>
 
+
+              <label id="Number_label" for="number">Number
+                <input type="tel" placeholder="Enter thr Number" id="number">
+              </label>
+
+            </div>
+
+            <div class="add_user_div_div">
+
+              <label id="Email_label" for="email">Email
+                <input type="email" placeholder="Ente the Email" id="email">
+              </label>
+
+              <label for="address">Address
+                <input type="text" placeholder="Enter thr Address" id="address">
+
+              </label>
+
+            </div>
+
+            <label for="description">Description
+              <textarea name="description" id="description"></textarea>
             </label>
 
-
-            <label id="Number_label" for="number">Number
-              <input type="phone" placeholder="Enter thr Number" id="number">
-            </label>
-
-          </div>
-
-          <div class="add_user_div_div">
-
-            <label id="Email_label" for="email">Email
-              <input type="email" placeholder="Ente the Email" id="email">
-            </label>
-
-            <label for="address">Address
-              <input type="text" placeholder="Enter thr Address" id="address">
-
-            </label>
-
-          </div>
-
-          <label for="description">Description
-            <textarea name="description" id="description"></textarea>
-          </label>
-
-          <div id="add_button">
-            <button onclick="close_popup('close')" id="cancel_add">Cancel</button>
-            <button onclick="add_user()" id="save_add">Add</button>
-          </div>
+            <div id="add_button">
+              <button onclick="close_popup('close')" id="cancel_add">Cancel</button>
+              <button onclick="add_user()" id="save_add">Add</button>
+            </div>
+          </form>
         </div>
 
+      </div>
+      <div id="alldot">
+        <div id="alldot_in">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
       </div>
     </div>
     <script src="javascript/index_js.js"></script>
@@ -152,7 +160,9 @@
 
 
   <footer>
+
     <h2>Firas Najjar</h2>
+    <button id="surprise" onclick="open_popup('alldot')">&&</button>
     <h2>Mohammad Kadan</h2>
   </footer>
 
