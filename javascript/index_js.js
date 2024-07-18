@@ -80,7 +80,7 @@ function showUsers() {
  */
 function updatecount(index) {
   //UPDATES CONTACT COUNTER
-  document.getElementById("counter_users").innerHTML = `<h2>${value} Contacts</h2>`;
+  document.getElementById("counter_users").innerHTML = `<h2>${index} Contacts</h2>`;
 }
 
 
@@ -91,11 +91,11 @@ function updatecount(index) {
  * @return {boolean} true if name of contact contains what   
  */
 function has(name, searchinput) {
-  if (text.length > name.length)
+  if (searchinput.length > name.length)
     return false;
   else
-    for (let i = 0; i < text.length; i++)
-      if (name[i].toUpperCase() !== text[i].toUpperCase() && name[i].toLowerCase() !== text[i].toLowerCase())
+    for (let i = 0; i < searchinput.length; i++)
+      if (name[i].toUpperCase() !== searchinput[i].toUpperCase() && name[i].toLowerCase() !== searchinput[i].toLowerCase())
         return false
 
   return true;
